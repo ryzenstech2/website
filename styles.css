@@ -72,33 +72,34 @@ section ul li::before {
 }
 
 /* Aggiungi queste regole CSS al tuo file styles.css */
+
 .screenshot-container {
     overflow: hidden;
     position: relative;
     width: 100%;
-}
-
-.screenshots-wrapper {
     display: flex;
-    transition: transform 0.5s ease;
+    justify-content: center; /* Centra gli elementi orizzontalmente */
+    align-items: center; /* Centra gli elementi verticalmente */
+    position: relative;
 }
 
-.screenshot-container img {
-    width: 100%;
-}
-
-.controls {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.controls button {
+.arrow-btn {
     font-size: 24px;
     background: transparent;
     border: none;
     cursor: pointer;
     outline: none;
-    margin: 0 10px;
+    position: absolute;
+    top: 50%; /* Posiziona al centro verticalmente */
+    transform: translateY(-50%); /* Regola la posizione verticale al centro */
+}
+
+.left {
+    left: 10px; /* Posiziona la freccia sinistra a sinistra */
+}
+
+.right {
+    right: 10px; /* Posiziona la freccia destra a destra */
 }
 
 /* Contact section styles */
