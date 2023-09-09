@@ -77,37 +77,22 @@ section ul li::before {
     overflow: hidden;
     position: relative;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .screenshots-wrapper {
     display: flex;
-    width: 200%; /* Il doppio della larghezza delle immagini */
-    animation: scrollAnimation 4s infinite linear;
+    justify-content: space-between;
+    width: 100%; /* Imposta la larghezza al 100% */
 }
 
-.screenshots-wrapper img {
-    width: 50%; /* Metà della larghezza del container per ciascuna immagine */
+.screenshot {
+    max-width: 30%; /* Regola la dimensione massima per gli screenshot */
+    height: auto;
 }
-
-@keyframes scrollAnimation {
-    0% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(-50%);
-    }
-    75% {
-        transform: translateX(-50%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-
 
 /* Contact section styles */
 section#contact a {
