@@ -71,21 +71,34 @@ section ul li::before {
     margin-left: -1em;
 }
 
-/* Screenshot container styles */
+/* Aggiungi queste regole CSS al tuo file styles.css */
 .screenshot-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.screenshots-wrapper {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 1rem;
+    transition: transform 0.5s ease;
 }
 
 .screenshot-container img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.controls button {
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin: 0 10px;
 }
 
 /* Contact section styles */
