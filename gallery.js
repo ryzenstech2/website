@@ -1,28 +1,33 @@
 <script>
-    const screenshotsWrapper = document.querySelector('.screenshots-wrapper');
+    const screenshots = document.querySelectorAll('.screenshot-container img');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    const screenshotCount = document.querySelectorAll('.screenshots-wrapper img').length;
     let currentScreenshotIndex = 0;
 
     function showScreenshot(index) {
-        const screenshotWidth = document.querySelector('.screenshots-wrapper img').clientWidth;
-        const newPosition = -index * screenshotWidth;
-        screenshotsWrapper.style.transform = `translateX(${newPosition}px)`;
+        for (let i = 0; i < screenshots.length; i++) {
+            screenshots[i].style.display = 'none';
+        }
+        screenshots[index].style.display = 'block';
     }
 
     function nextScreenshot() {
-        currentScreenshotIndex = (currentScreenshotIndex + 1) % screenshotCount;
+        currentScreenshotIndex = (currentScreenshotIndex + 1) % screenshots.length;
         showScreenshot(currentScreenshotIndex);
     }
 
     function prevScreenshot() {
-        currentScreenshotIndex = (currentScreenshotIndex - 1 + screenshotCount) % screenshotCount;
+        currentScreenshotIndex = (currentScreenshotIndex - 1 + screenshots.length) % screenshots.length;
         showScreenshot(currentScreenshotIndex);
     }
 
     nextBtn.addEventListener('click', nextScreenshot);
     prevBtn.addEventListener('click', prevScreenshot);
 
-    setInterval(nextScreenshot, 6000); // Cambia automaticamente ogni 6 secondi
+    function autoChangeScreenshot() {
+        nextScreenshot();
+        setTimeout(autoChangeScreenshot, 6000); // Cambia automaticamente ogni 6 secondi
+    }
+
+    autoChangeScreenshot();
 </script>
