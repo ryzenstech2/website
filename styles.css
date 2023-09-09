@@ -77,39 +77,36 @@ section ul li::before {
     overflow: hidden;
     position: relative;
     width: 100%;
+}
+
+.screenshots-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    width: 200%; /* Il doppio della larghezza delle immagini */
+    animation: scrollAnimation 4s infinite linear;
 }
 
-.arrow-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.screenshots-wrapper img {
+    width: 50%; /* Metà della larghezza del container per ciascuna immagine */
 }
 
-.arrow-btn {
-    font-size: 40px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    color: #fff; /* Cambia colore a tuo piacimento */
+@keyframes scrollAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    75% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
-.left {
-    margin-left: 10px;
-}
-
-.right {
-    margin-right: 10px;
-}
 
 
 /* Contact section styles */
